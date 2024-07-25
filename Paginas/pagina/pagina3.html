@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Estilo/estilo.css" />
+
+   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
+    <title>Formulario</title>
+  </head>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="../../index.html">Ir a Inicio</a>
+        </li>      
+      </ul>
+    </nav>
+  </header>
+  <body>
+    <div class="formulario">
+      <h1 class="for">Formulario de Ingreso</h1>
+
+      <form
+        id="form"
+        action="pagina4.html"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <p>
+          <label for="nombre" class="colocar_nombre"
+            >Nombre
+            <span class="obligatorio">*</span>
+          </label>
+          <input
+            class="ingresa"
+            type="text"
+            name="introducir_nombre"
+            id="nombre"
+            required="obligatorio"
+            placeholder="Escribe tu nombre"
+          />
+        </p>
+        <p>
+          <label for="rut" class="colocar_rut"
+            >RUT
+            <span class="obligatorio">*</span>
+          </label>
+          <input
+            class="ingresa"
+            type="text"
+            name="introducir_rut"
+            id="rut"
+            placeholder="Escribe tu RUT"
+            required="obligatorio"
+            onblur="validarRut()"
+            ;
+          />
+        </p>
+
+        <span id="mensajeValidacion" class="mensaje-validacion"></span>
+
+        <p>
+          <label for="direccion" class="colocar_direccion"
+            >Direccion
+            <span class="obligatorio">*</span>
+          </label>
+          <input
+            class="ingresa"
+            type="text"
+            name="introducir_direccion"
+            id="direccion"
+            placeholder="Escribe tu Dirección"
+            required="obligatorio"
+          />
+        </p>
+        <p>
+          <label for="correo" class="colocar_email">
+            Correo
+            <span class="obligatorio">*</span>
+          </label>
+          <input
+            class="ingresa"
+            type="email"
+            name="introducir_correo"
+            id="correo"
+            required
+            placeholder="Escribe tu correo"
+            onblur="validarCorreo();"
+          />
+          <span id="mensajeValidacionCorreo" class="mensaje-validacion"></span>
+        </p>
+
+        <p>
+          <label for="foto" class="colocar_foto"
+            >Adjuntar Foto<span class="obligatorio">*</span>
+          </label>
+          <input
+            type="file"
+            id="foto"
+            name="foto"
+            accept="image/*"
+            style="display: none"
+            onchange="mostrarImagen(event)"
+          />
+          <img id="imagenMostrada" src="#" alt="Imagen" style="display: none; margin-bottom: 5%;" />
+
+          <label for="foto" class="boton-adjuntar"
+            >Seleccionar una imagen</label
+          >
+        </p>
+
+        <button
+          class="boton-formulario btn3"
+          type="submit"
+          name="enviar_formulario"
+          id="enviar"
+          
+        >
+          <p>Enviar</p>
+        </button>
+
+        <p class="aviso">
+          <span class="obligatorio"> * </span>los campos son obligatorios.
+        </p>
+      </form>
+    </div>
+
+    <script src="../app/script.js"></script>
+  </body>
+  <footer>
+    <h3 class="textoblanco">SOL BRICEÑO -- BELÉN ALARCON fecha: 02/10/23</h3>
+  </footer>
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+</html>
